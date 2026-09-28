@@ -1,6 +1,6 @@
 # RPG runtime EasyRPG Web release
 
-Tags matching `retrom-core-0.8.1.1-rN` build the tagged Player source with
+Tags matching `retrom-core-ge68fff4a13a3-rN` build the tagged Player source with
 Emscripten 3.1.74 and publish these GitHub Release assets:
 
 - `easyrpg-player.js`
@@ -8,6 +8,9 @@ Emscripten 3.1.74 and publish these GitHub Release assets:
 - `rpg-runtime-release.json`
 
 The workflow pins the liblcf and EasyRPG buildscripts commits used by host-independent RPG runtimes.
+The Web build selects upstream's supported SDL2 backend explicitly; upstream's
+new desktop default is SDL3. The pinned liblcf includes the Maniacs data types
+required by Player at `e68fff4a13a3dd5d40678ae66ee60f85ccb04153`.
 Hosts may pass `runtimeProjectRootUrl` to the modularized player factory to
 load a project from an explicit URL. When omitted, the normal EasyRPG
 `games/<game>/` lookup remains unchanged.

@@ -17,6 +17,6 @@ docker run --rm --platform linux/amd64 --hostname rpg-runtime-easyrpg \
 commit=$(git -C "$root" rev-parse HEAD)
 python3 "$root/.github/rpg-runtime/verify-release.py" --output "$output" \
   --repository "$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["forkRepository"])' "$root/retrom-fork.json")" \
-  --tag retrom-core-0.8.1.1-r999999 --commit "$commit"
+  --tag retrom-core-ge68fff4a13a3-r999999 --commit "$commit"
 rm "$output/rpg-runtime-release.json"
 python3 "$root/.github/rpg-runtime/candidate_descriptor.py" finalize "$output" --core-id easyrpg

@@ -46,7 +46,7 @@
 namespace {
 	std::unordered_map<std::string, FileRequestAsync> async_requests;
 	std::unordered_map<std::string, std::string> file_mapping;
-#ifdef EMSCRIPTEN
+#ifdef __EMSCRIPTEN__
 	struct runtime_rtp_file {
 		std::string path;
 		std::string url;
