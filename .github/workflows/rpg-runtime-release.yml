@@ -46,9 +46,9 @@ jobs:
           test "$(python3 -c \
             'import json; print(json.load(open("retrom-fork.json"))["upstreams"][0]["ref"])')" = \
             e68fff4a13a3dd5d40678ae66ee60f85ccb04153
-          test "$(python3 -c \
-            'import json; print(json.load(open("retrom-fork.json"))["upstreams"][0]["commit"])')" = \
-            e68fff4a13a3dd5d40678ae66ee60f85ccb04153
+          baseline_commit=$(python3 -c \
+            'import json; print(json.load(open("retrom-fork.json"))["upstreams"][0]["commit"])')
+          test "$baseline_commit" = e68fff4a13a3dd5d40678ae66ee60f85ccb04153
           git cat-file -e \
             e68fff4a13a3dd5d40678ae66ee60f85ccb04153'^{commit}'
           git merge-base --is-ancestor \
@@ -67,6 +67,7 @@ jobs:
           mkdir -p "$output" "$work"
           export RETROM_HOST_UID="$(id -u)"
           export RETROM_HOST_GID="$(id -g)"
+          emsdk_digest=af45409f3199d88db4b1b03af0098532c8fb33a375ac257463eeb0a622870d06
           docker run --rm \
             --platform linux/amd64 \
             --hostname rpg-runtime-easyrpg \
@@ -75,7 +76,7 @@ jobs:
             -v "$GITHUB_WORKSPACE/.github/rpg-runtime:/recipe:ro" \
             -v "$work:/work" \
             -v "$output:/output" \
-            emscripten/emsdk@sha256:af45409f3199d88db4b1b03af0098532c8fb33a375ac257463eeb0a622870d06 \
+            "emscripten/emsdk@sha256:$emsdk_digest" \
             /recipe/build-easyrpg.sh
 
       - name: Validate and describe assets
