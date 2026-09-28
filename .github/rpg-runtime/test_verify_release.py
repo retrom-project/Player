@@ -47,9 +47,9 @@ class ReleaseMarkerTests(unittest.TestCase):
         workflow = (ROOT / ".github/workflows/rpg-runtime-release.yml").read_text(encoding="utf-8")
 
         self.assertEqual(contract["forkRepository"], "https://github.com/retrom-project/Player")
-        self.assertTrue(VERIFY.TAG.fullmatch("retrom-core-0.8.1.1-r6"))
-        self.assertIsNone(VERIFY.TAG.fullmatch("rpg-runtime-0.8.1.1-r6"))
-        self.assertIn('"retrom-core-0.8.1.1-r*"', workflow)
+        self.assertTrue(VERIFY.TAG.fullmatch("retrom-core-ge68fff4a13a3-r6"))
+        self.assertIsNone(VERIFY.TAG.fullmatch("rpg-runtime-ge68fff4a13a3-r6"))
+        self.assertIn('"retrom-core-ge68fff4a13a3-r*"', workflow)
 
     def test_remote_rtp_bridge_marker_belongs_to_wasm(self) -> None:
         self.assertIn(b"runtimeRtpRemoteFiles", VERIFY.WASM_BRIDGE_MARKERS)

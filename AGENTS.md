@@ -7,8 +7,9 @@ workflow, credentials, or private game content.
 ## Repository identity
 
 - `master` is an unmodified, fast-forward-only mirror of `upstream/master`.
-- `retrom/0.8.1.1` is the only active Retrom maintenance baseline and the
-  repository default branch. Retrom patches and release tags originate there,
+- This sync proposes `retrom/ge68fff4a13a3` as the next Retrom maintenance
+  baseline. Until reviewed promotion, the remote baseline/default remains
+  `retrom/0.8.1.1`. After promotion, patches and release tags originate there,
   never from `master`.
 - `upstream` must point to `https://github.com/EasyRPG/Player.git`.
 - `retrom-fork.json` is the machine-readable upstream baseline and release
@@ -24,7 +25,7 @@ workflow, credentials, or private game content.
   `build/<task>-<slug>`, or `sync/upstream-<baseline>` branches.
 - Branch names use lowercase ASCII and hyphens. Do not create branches named
   `temp`, `clean`, `final`, `runtime-clean`, or with an agent/user name.
-- Create work branches from `retrom/0.8.1.1`, merge one logical change at a
+- Create work branches from `retrom/ge68fff4a13a3`, merge one logical change at a
   time back into that baseline, then delete the work branch.
 - Never force-push, move, or delete another contributor's branch. A one-time
   repository normalization must be explicitly authorized by the maintainer.
@@ -33,13 +34,13 @@ workflow, credentials, or private game content.
 
 ## Releases
 
-- Release tags have the form `retrom-core-0.8.1.1-rN`, with optional
+- Release tags have the form `retrom-core-ge68fff4a13a3-rN`, with optional
   `-rc.N` only for integration candidates.
 - `rN` increases for any source, build, asset, or adapter-contract change while
-  the upstream baseline remains `0.8.1.1`. A new upstream baseline restarts at
+  the upstream baseline remains `ge68fff4a13a3`. A new upstream baseline restarts at
   `r1` under its own tag name.
 - Create annotated tags only from a clean commit already merged into
-  `retrom/0.8.1.1`. The tagged commit must retain the exact upstream tag commit
+  `retrom/ge68fff4a13a3`. The tagged commit must retain the exact upstream commit
   recorded in `retrom-fork.json` as its unmodified ancestry baseline.
 - Tags and published assets are immutable: never move a tag, overwrite an
   asset, or create aliases such as `latest`, `stable`, or `current`.

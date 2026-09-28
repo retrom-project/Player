@@ -1,18 +1,18 @@
 {
   "schemaVersion": 1,
   "forkRepository": "https://github.com/retrom-project/Player",
-  "defaultBranch": "retrom/0.8.1.1",
+  "defaultBranch": "retrom/ge68fff4a13a3",
   "upstreamMirrorBranch": "master",
   "upstreams": [
     {
       "role": "player",
       "repository": "https://github.com/EasyRPG/Player",
-      "refType": "TAG",
-      "ref": "0.8.1.1",
-      "commit": "78328fa29f465315291e161130e6682f69410370"
+      "refType": "COMMIT",
+      "ref": "e68fff4a13a3dd5d40678ae66ee60f85ccb04153",
+      "commit": "e68fff4a13a3dd5d40678ae66ee60f85ccb04153"
     }
   ],
-  "releaseTagPattern": "^retrom-core-0\\.8\\.1\\.1-r[1-9][0-9]*(-rc\\.[1-9][0-9]*)?$",
+  "releaseTagPattern": "^retrom-core-ge68fff4a13a3-r[1-9][0-9]*(-rc\\.[1-9][0-9]*)?$",
   "adapterAbi": "easyrpg-save",
   "releaseAssets": [
     "easyrpg-player.js",
