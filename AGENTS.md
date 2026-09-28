@@ -7,10 +7,8 @@ workflow, credentials, or private game content.
 ## Repository identity
 
 - `master` is an unmodified, fast-forward-only mirror of `upstream/master`.
-- This sync proposes `retrom/ge68fff4a13a3` as the next Retrom maintenance
-  baseline. Until reviewed promotion, the remote baseline/default remains
-  `retrom/0.8.1.1`. After promotion, patches and release tags originate there,
-  never from `master`.
+- `retrom/ge68fff4a13a3` is the Retrom maintenance baseline and default
+  branch. Patches and release tags originate there, never from `master`.
 - `upstream` must point to `https://github.com/EasyRPG/Player.git`.
 - `retrom-fork.json` is the machine-readable upstream baseline and release
   contract. Never replace its tag or commit with a floating branch.
