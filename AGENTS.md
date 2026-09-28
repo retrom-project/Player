@@ -1,6 +1,7 @@
 # Retrom Player fork maintenance rules
 
-This fork builds the EasyRPG browser core consumed by `retrom-project/retrom-runtime`.
+This fork builds the EasyRPG browser core consumed by
+`retrom-project/retrom-runtime`.
 It must remain independent of any Retrom host application API, database, review
 workflow, credentials, or private game content.
 
@@ -23,8 +24,8 @@ workflow, credentials, or private game content.
   `build/<task>-<slug>`, or `sync/upstream-<baseline>` branches.
 - Branch names use lowercase ASCII and hyphens. Do not create branches named
   `temp`, `clean`, `final`, `runtime-clean`, or with an agent/user name.
-- Create work branches from `retrom/ge68fff4a13a3`, merge one logical change at a
-  time back into that baseline, then delete the work branch.
+- Create work branches from `retrom/ge68fff4a13a3`, merge one logical change
+  at a time back into that baseline, then delete the work branch.
 - Never force-push, move, or delete another contributor's branch. A one-time
   repository normalization must be explicitly authorized by the maintainer.
 - Preserve downstream patches as small reviewable commits so an upstream sync
@@ -35,11 +36,11 @@ workflow, credentials, or private game content.
 - Release tags have the form `retrom-core-ge68fff4a13a3-rN`, with optional
   `-rc.N` only for integration candidates.
 - `rN` increases for any source, build, asset, or adapter-contract change while
-  the upstream baseline remains `ge68fff4a13a3`. A new upstream baseline restarts at
-  `r1` under its own tag name.
+  the upstream baseline remains `ge68fff4a13a3`. A new upstream baseline
+  restarts at `r1` under its own tag name.
 - Create annotated tags only from a clean commit already merged into
-  `retrom/ge68fff4a13a3`. The tagged commit must retain the exact upstream commit
-  recorded in `retrom-fork.json` as its unmodified ancestry baseline.
+  `retrom/ge68fff4a13a3`. The tagged commit must retain the exact upstream
+  commit recorded in `retrom-fork.json` as its unmodified ancestry baseline.
 - Tags and published assets are immutable: never move a tag, overwrite an
   asset, or create aliases such as `latest`, `stable`, or `current`.
 - Existing `rpg-runtime-*` tags are immutable historical records. Never create
