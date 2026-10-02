@@ -57,7 +57,7 @@ jobs:
             e68fff4a13a3dd5d40678ae66ee60f85ccb04153.."$GITHUB_SHA")"
 
       - name: Test release verifier
-        run: python3 .github/rpg-runtime/test_verify_release.py
+        run: python3 -m unittest discover -s .github/rpg-runtime -p 'test_*.py'
 
       - name: Build WebAssembly assets
         run: |

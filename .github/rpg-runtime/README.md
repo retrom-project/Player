@@ -25,6 +25,10 @@ The runtime status reports only the actual engine, map readiness, checkpoint
 availability and frame count. It has no host review or fixture-state protocol;
 development tests can inspect an ordinary saved LCF file for map and variable
 assertions without changing the core's public status.
+Browser builds disable Emscripten dynamic JavaScript execution. The release gate
+rejects `Function`/`eval` invokers in the delivered glue. Product validation runs
+the resulting pair with production CSP and without bypassing CSP.
+
 The JSON digest values describe the uploaded bytes for cache diagnostics; they
 are not the remote admission identity. Consumers identify this runtime by the
 repository, tag, tag commit, asset filenames and `easyrpg-save-v1` adapter ABI.

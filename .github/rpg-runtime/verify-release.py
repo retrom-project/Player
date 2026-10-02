@@ -56,6 +56,9 @@ def main() -> int:
     javascript = js_path.read_text(encoding="utf-8")
     if any(marker not in javascript for marker in JAVASCRIPT_BRIDGE_MARKERS):
         raise SystemExit("RPG_RUNTIME_RELEASE_BRIDGE_INVALID")
+    # Check the delivered glue, including Embind invokers, rather than build flags.
+    if re.search(r"\b(?:Function|eval)\s*\(", javascript):
+        raise SystemExit("RPG_RUNTIME_RELEASE_CSP_INVALID")
 
     assets = []
     for path in (js_path, wasm_path):
